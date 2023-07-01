@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="pmikhalev" id="000-1">
+        <createTable tableName="store">
+            <column name="id" type="serial" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="store_id_pk"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+        </createTable>
+        <createTable tableName="price">
+            <column name="id" type="bigserial" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="price_id_pk"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="unit_info" type="varchar(255)"/>
+            <column name="price" type="decimal"/>
+            <column name="usual_price" type="decimal"/>
+            <column name="discount" type="varchar(255)"/>
+            <column name="description" type="varchar(1000)"/>
+            <column name="url" type="varchar(1000)"/>
+            <column name="image" type="varchar(1000)"/>
+            <column name="categories" type="varchar(1000)"/>
+            <column name="store" type="varchar(1000)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
